@@ -1,0 +1,26 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+
+	"qognify.com/types/eIncidentSeverity"
+	"qognify.com/types/incident"
+)
+
+func main() {
+
+	var myIncident incident.Incident
+	myIncident.ID = 1
+	myIncident.Name = "New Incident 1"
+	myIncident.Severity = eIncidentSeverity.NORMAL
+
+	fmt.Print("Enter 'q' for quit the application: ")
+	var scanner = bufio.NewScanner(os.Stdin)
+	var response string
+	for response != "q" {
+		scanner.Scan()
+		response = scanner.Text()
+	}
+}
